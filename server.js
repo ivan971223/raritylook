@@ -181,7 +181,7 @@ app.get('/retrieve/upcoming', (req, res) => {
 })
 
 if (process.env.NODE_ENV == "production"){
-    app.use(express.static("client/build"));
+    app.use(express.static("nft_web/build"));
     const path = require("path")
     app.get("*", (req,res)=>{
         res.sendFile(path.resolve(_dirname,'client','build','index.html'));
