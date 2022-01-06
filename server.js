@@ -13,10 +13,9 @@ import mongoProjects from './mongoProjects.js'
 import mongoUpcoming from './mongoUpcoming.js'
 import mongoFavourite from './mongoFavourite.js'
 
-const path = require("path")
 
 // Grid.mongo = mongoose.mongo
-require("dotenv").config({path:"./config.env"});
+// require("dotenv").config({path:"./config.env"});
 //app config
 const app = express()
 const port = process.env.PORT || 9000
