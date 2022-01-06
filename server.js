@@ -1,4 +1,5 @@
 //importing stuff
+
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
@@ -13,7 +14,7 @@ import mongoUpcoming from './mongoUpcoming.js'
 import mongoFavourite from './mongoFavourite.js'
 
 // Grid.mongo = mongoose.mongo
-
+require("dotenv").config({path:"./config.env"});
 //app config
 const app = express()
 const port = process.env.PORT || 9000
