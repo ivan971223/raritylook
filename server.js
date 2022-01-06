@@ -13,6 +13,8 @@ import mongoProjects from './mongoProjects.js'
 import mongoUpcoming from './mongoUpcoming.js'
 import mongoFavourite from './mongoFavourite.js'
 
+const path = require("path")
+
 // Grid.mongo = mongoose.mongo
 require("dotenv").config({path:"./config.env"});
 //app config
@@ -30,6 +32,7 @@ const port = process.env.PORT || 9000
 //middlewares
 app.use(bodyParser.json());
 app.use(cors())
+
 
 //db config
 const mongoURI = 'mongodb+srv://admin:admin@serverlessinstance0.qt9z7.mongodb.net/nftProjectDB?retryWrites=true&w=majority'
@@ -181,12 +184,12 @@ app.get('/retrieve/upcoming', (req, res) => {
     };
 })
 
-if (process.env.NODE_ENV == "production"){
+if (process.env.NODE_ENV === "production"){
     app.use(express.static("nft_web/build"));
-    const path = require("path")
     app.get("*", (req,res)=>{
         res.sendFile(path.resolve(_dirname,'nft_web','build','index.html'));
     })
 }
+
 //listener
 app.listen(port, () => console.log(`listening on localhost:${port}`))
