@@ -164,12 +164,12 @@ app.get('/retrieve/upcoming', (req, res) => {
     };
 })
 
-// if (process.env.NODE_ENV === "production"){
-//     app.use(express.static("./nft_web/build"));
-//     app.get("*", (req,res)=>{
-//         res.sendFile(path.resolve(__dirname,'nft_web','build','index.html'));
-//     })
-// }
+if (process.env.NODE_ENV === "production"){
+    app.use(express.static("./nft_web/build"));
+    app.get("/", (req,res)=>{
+        res.sendFile(path.resolve(__dirname,'nft_web','build','index.html'));
+    })
+}
 
 //listener
 app.listen(port, () => console.log(`listening on localhost:${port}`))
