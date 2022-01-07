@@ -36,7 +36,7 @@ const port = process.env.PORT || 9000
 app.use(bodyParser.json());
 app.use(cors())
 
-app.use(express.static("./nft_web/build"));
+app.use('/',express.static("./nft_web/build"));
 //db config
 const mongoURI = 'mongodb+srv://admin:admin@serverlessinstance0.qt9z7.mongodb.net/nftProjectDB?retryWrites=true&w=majority'
 
@@ -44,29 +44,6 @@ const conn = mongoose.createConnection(mongoURI, {
 });
 
 const connection = mongoose.connect(mongoURI)
-
-mongoose.connection.once('open', () => {
-    console.log('DB Connected')
-
-    // const changeStream = mongoose.connection.collection('posts').watch()
-
-    // changeStream.on('change', (change)=>{
-    //     console.log(change)
-
-    //     if(change.operationType==='insert'){
-    //         console.log('Triggering Pusher')
-
-    //         pusher.trigger('posts', 'inserted', {
-    //             change: change
-    //         })
-    //     } else {
-    //         console.log('Error triggering Pusher')
-    //     }
-    // })
-})
-
-//api routes
-app.get('/', (req, res) => res.status(200).send('hello World'))
 
 app.get('/retrieve/nftcollections', (req, res) => {
     const itemModel = new mongoose.Schema({
@@ -187,12 +164,12 @@ app.get('/retrieve/upcoming', (req, res) => {
     };
 })
 
-if (process.env.NODE_ENV === "production"){
-    app.use(express.static("nft_web/build"));
-    app.get("*", (req,res)=>{
-        res.sendFile(path.resolve(__dirname,'nft_web','build','index.html'));
-    })
-}
+// if (process.env.NODE_ENV === "production"){
+//     app.use(express.static("./nft_web/build"));
+//     app.get("*", (req,res)=>{
+//         res.sendFile(path.resolve(__dirname,'nft_web','build','index.html'));
+//     })
+// }
 
 //listener
 app.listen(port, () => console.log(`listening on localhost:${port}`))
