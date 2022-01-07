@@ -1,0 +1,12 @@
+.collection {
+    flex: 1;
+    padding: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

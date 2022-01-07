@@ -1,0 +1,24 @@
+:root {
+    --pacific_blue:	#046f9e;
+    --dark_blue:#05537e; 
+    --white: #FFFFFF;
+    --orange: #ff7c35;
+    --dark_orange: #cf4716;
+  }  
+
+
+.toolbar{
+    background: var(--dark_blue);
+}
+.sort-box{
+    width: 5px;
+}
+.rank-box{
+    display: flex;
+}
+.price-box{
+    display: flex;
+}
+.token-container{
+    display: flex;
+}
