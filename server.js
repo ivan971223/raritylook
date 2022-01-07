@@ -34,7 +34,7 @@ const port = process.env.PORT || 9000
 
 //middlewares
 app.use(bodyParser.json());
-app.use(cors())
+// app.use(cors())
 
 app.use('/',express.static("./nft_web/build"));
 //db config
