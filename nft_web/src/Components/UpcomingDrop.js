@@ -111,7 +111,7 @@ export default function StickyHeadTable() {
   const [rowId, setRowId] = useState()
 
   const syncUpcoming = () => {
-    axios.get('/retrieve/upcoming')
+    axios.get('https://rarity-look.herokuapp.com/retrieve/upcoming')
       .then((res) => {
         console.log(res.data)
         setUpcomingData(res.data)
