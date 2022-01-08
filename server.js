@@ -26,8 +26,9 @@ const port = process.env.PORT || 9000
 
 //middlewares
 app.use(bodyParser.json());
-app.use(cors())
+// app.use(cors())
 
+// app.use('/',express.static("./nft_web/build"));
 //db config
 const mongoURI = 'mongodb+srv://admin:admin@serverlessinstance0.qt9z7.mongodb.net/nftProjectDB?retryWrites=true&w=majority'
 
