@@ -22,11 +22,11 @@ const __dirname = dirname(__filename);
 // require("dotenv").config({path:"./config.env"});
 //app config
 const app = express()
-const port = process.env.PORT 
+const port = process.env.PORT || 9000
 
 //middlewares
 app.use(bodyParser.json());
-// app.use(cors())
+app.use(cors())
 
 // app.use('/',express.static("./nft_web/build"));
 //db config
