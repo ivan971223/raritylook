@@ -22,7 +22,7 @@ const __dirname = dirname(__filename);
 // require("dotenv").config({path:"./config.env"});
 //app config
 const app = express()
-const port = process.env.PORT || 9000
+const port = process.env.PORT 
 
 //middlewares
 app.use(bodyParser.json());
