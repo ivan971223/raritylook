@@ -28,7 +28,7 @@ const port = process.env.PORT || 9000
 app.use(bodyParser.json());
 // app.use(cors())
 
-app.use('/',express.static("./nft_web/build"));
+// app.use('/',express.static("./nft_web/build"));
 //db config
 const mongoURI = 'mongodb+srv://admin:admin@serverlessinstance0.qt9z7.mongodb.net/nftProjectDB?retryWrites=true&w=majority'
 
@@ -156,12 +156,12 @@ app.get('/retrieve/upcoming', (req, res) => {
     };
 })
 
-// if (process.env.NODE_ENV === "production"){
-//     app.use(express.static("./nft_web/build"));
-//     app.get("/", (req,res)=>{
-//         res.sendFile(path.resolve(__dirname,'nft_web','build','index.html'));
-//     })
-// }
+if (process.env.NODE_ENV === "production"){
+    app.use(express.static("nft_web/build"));
+    app.get("*", (req,res)=>{
+        res.sendFile(path.resolve(__dirname,'nft_web','build','index.html'));
+    })
+}
 
 //listener
 app.listen(port, () => console.log(`listening on localhost:${port}`))
