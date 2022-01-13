@@ -34,6 +34,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import SendIcon from '@mui/icons-material/Send';
 import MenuItem from '@mui/material/MenuItem';
 import { set } from 'mongoose';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ViewListIcon from '@mui/icons-material/ViewList';
+import ListAltIcon from '@mui/icons-material/ListAlt';
 
 const drawerWidth = 240;
 
@@ -424,7 +427,31 @@ function ResponsiveDrawer(props) {
                 );
               })}
             </Paper>
-
+            <Box >
+                <Toolbar />
+                <Divider />
+                <List>
+                    <ListItem button component={Link} to="/">
+                        <ListItemIcon>
+                            <ListAltIcon color="primary" />
+                        </ListItemIcon>
+                        <ListItemText primary="Latest Project" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/upcomingdrop">
+                        <ListItemIcon>
+                            <ViewListIcon color="primary" />
+                        </ListItemIcon>
+                        <ListItemText primary="Upcoming Drop" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/listproject">
+                        <ListItemIcon>
+                            <AddCircleIcon color="primary" />
+                        </ListItemIcon>
+                        <ListItemText primary="List New Project" />
+                    </ListItem>
+                </List>
+                <Divider />
+            </Box>
           </div>
         </ThemeProvider>
 
