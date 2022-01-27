@@ -30,7 +30,7 @@ app.use(cors())
 
 // app.use('/',express.static("./nft_web/build"));
 //db config
-const mongoURI = 'mongodb+srv://admin:admin@serverlessinstance0.qt9z7.mongodb.net/nftProjectDB?retryWrites=true&w=majority'
+const mongoURI = 'mongodb+srv://admin:Uz8j4xpynWgjpAKO@serverlessinstance0.qt9z7.mongodb.net/nftProjectDB?retryWrites=true&w=majority'
 
 const conn = mongoose.createConnection(mongoURI, {
 });

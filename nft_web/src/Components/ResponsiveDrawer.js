@@ -427,7 +427,7 @@ function ResponsiveDrawer(props) {
                 );
               })}
             </Paper>
-            <Box >
+            <Box sx={{ display: { xs: 'block', sm: 'none' }}}>
                 <Toolbar />
                 <Divider />
                 <List>
